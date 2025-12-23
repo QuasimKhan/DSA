@@ -54,3 +54,21 @@
 // }
 
 // console.log("Is array sorted - ", isArraySorted);
+
+// Q - Second largest number
+
+const a = [213, 12312, 42, 12, 32, 21, 32, 342, 12, 221, 2];
+
+let largest = -Infinity;
+let secondLargest = -Infinity;
+
+for (let i = 0; i < a.length; i++) {
+    if (a[i] > largest) {
+        secondLargest = largest;
+        largest = a[i];
+    } else if (a[i] > secondLargest && a[i] !== largest) {
+        secondLargest = a[i];
+    }
+}
+
+console.log("Second Largest - ", secondLargest);
