@@ -152,25 +152,71 @@
 
 // Q - Find the first non-repeating element
 
-const a = [1, 1, 2, 3];
+// const a = [1, 1, 2, 3];
+
+// const freq = {};
+// let firstNonRepeatingElement = -1;
+
+// for (let i = 0; i < a.length; i++) {
+//     const element = a[i];
+//     if (freq[element]) {
+//         freq[element]++;
+//     } else {
+//         freq[element] = 1;
+//     }
+// }
+
+// for (let i = 0; i < a.length; i++) {
+//     if (freq[a[i]] === 1) {
+//         firstNonRepeatingElement = a[i];
+//         break;
+//     }
+// }
+
+// console.log("First non repeating element - ", firstNonRepeatingElement);
+
+// Q - Check if two arrays contain the same elements (order does not matter )
+
+// function haveSameElements(arr1, arr2) {
+//     if (arr1.length !== arr2.length) return false;
+
+//     const freq = {};
+
+//     // Count frequency of first array
+//     for (let i = 0; i < arr1.length; i++) {
+//         freq[arr1[i]] = (freq[arr1[i]] || 0) + 1;
+//     }
+
+//     // Reduce frequency using second array
+//     for (let i = 0; i < arr2.length; i++) {
+//         if (!freq[arr2[i]]) {
+//             return false; // element missing or extra
+//         }
+//         freq[arr2[i]]--;
+//     }
+
+//     return true;
+// }
+
+// console.log(haveSameElements([1, 2, 3, 4, 5], [1, 2, 3, 4, 6]));
+
+// Q - Find all elements that appear more than once
+
+const arr = [1, 1, 2, 3, 4, 5];
 
 const freq = {};
-let firstNonRepeatingElement = -1;
+const duplicates = [];
 
-for (let i = 0; i < a.length; i++) {
-    const element = a[i];
-    if (freq[element]) {
-        freq[element]++;
-    } else {
-        freq[element] = 1;
+// Count frequency
+for (let i = 0; i < arr.length; i++) {
+    freq[arr[i]] = (freq[arr[i]] || 0) + 1;
+}
+
+// Collect elements that appear more than once
+for (let key in freq) {
+    if (freq[key] > 1) {
+        duplicates.push(Number(key));
     }
 }
 
-for (let i = 0; i < a.length; i++) {
-    if (freq[a[i]] === 1) {
-        firstNonRepeatingElement = a[i];
-        break;
-    }
-}
-
-console.log("First non repeating element - ", firstNonRepeatingElement);
+console.log(duplicates); // [1]
