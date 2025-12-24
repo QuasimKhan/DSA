@@ -93,12 +93,38 @@
 
 // Q - sum of all elements
 
-const a = [1, 2, 3, 4, 5];
+// const a = [1, 2, 3, 4, 5];
 
-let sum = 0;
+// let sum = 0;
+
+// for (let i = 0; i < a.length; i++) {
+//     sum = sum + a[i];
+// }
+
+// console.log("SUm of the elements - ", sum);
+
+// Q - Count frequency of each element in an array
+
+const a = [1, 2, 1, 2, 1, 2, 3, 3, 1, 3, 5];
+
+const freq = {};
 
 for (let i = 0; i < a.length; i++) {
-    sum = sum + a[i];
+    // if (freq[a[i]]) {
+    //     freq[a[i]]++;
+    // } else {
+    //     freq[a[i]] = 1;
+    // }
+
+    // we can also solve by taking a variable to sotre the element, which will look not messy
+
+    const element = a[i];
+
+    if (freq[element]) {
+        freq[element]++;
+    } else {
+        freq[element] = 1;
+    }
 }
 
-console.log("SUm of the elements - ", sum);
+console.log("Frequncy : ", freq);
