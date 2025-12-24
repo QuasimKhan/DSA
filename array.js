@@ -129,23 +129,48 @@
 
 // console.log("Frequncy : ", freq);
 
-// Q - Find the first repeating element
+// // Q - Find the first repeating element
 
-const a = [5, 1, 3, 12, 12];
+// const a = [5, 1, 3, 12, 12];
 
-const frequency = {};
-let firstRepeating = -1;
+// const frequency = {};
+// let firstRepeating = -1;
+
+// for (let i = 0; i < a.length; i++) {
+//     const element = a[i];
+
+//     if (frequency[element]) {
+//         frequency[element]++;
+//         firstRepeating = element;
+//         break;
+//     } else {
+//         frequency[element] = 1;
+//     }
+// }
+
+// console.log("First repeating is - ", firstRepeating);
+
+// Q - Find the first non-repeating element
+
+const a = [1, 1, 2, 3];
+
+const freq = {};
+let firstNonRepeatingElement = -1;
 
 for (let i = 0; i < a.length; i++) {
     const element = a[i];
-
-    if (frequency[element]) {
-        frequency[element]++;
-        firstRepeating = element;
-        break;
+    if (freq[element]) {
+        freq[element]++;
     } else {
-        frequency[element] = 1;
+        freq[element] = 1;
     }
 }
 
-console.log("First repeating is - ", firstRepeating);
+for (let i = 0; i < a.length; i++) {
+    if (freq[a[i]] === 1) {
+        firstNonRepeatingElement = a[i];
+        break;
+    }
+}
+
+console.log("First non repeating element - ", firstNonRepeatingElement);
