@@ -57,18 +57,48 @@
 
 // Q - Second largest number
 
-const a = [213, 12312, 42, 12, 32, 21, 32, 342, 12, 221, 2];
+// const a = [213, 12312, 42, 12, 32, 21, 32, 342, 12, 221, 2];
 
-let largest = -Infinity;
-let secondLargest = -Infinity;
+// let largest = -Infinity;
+// let secondLargest = -Infinity;
+
+// for (let i = 0; i < a.length; i++) {
+//     if (a[i] > largest) {
+//         secondLargest = largest;
+//         largest = a[i];
+//     } else if (a[i] > secondLargest && a[i] !== largest) {
+//         secondLargest = a[i];
+//     }
+// }
+
+// console.log("Second Largest - ", secondLargest);
+
+// Q - Reverse an array without the built in function
+
+// const a = [1, 2, 3, 4, 5, 6, 6];
+
+// let left = 0;
+// let right = a.length - 1;
+
+// while (left < right) {
+//     let temp = a[left];
+//     a[left] = a[right];
+//     a[right] = temp;
+
+//     left++;
+//     right--;
+// }
+
+// console.log("Reversed Array - ", a);
+
+// Q - sum of all elements
+
+const a = [1, 2, 3, 4, 5];
+
+let sum = 0;
 
 for (let i = 0; i < a.length; i++) {
-    if (a[i] > largest) {
-        secondLargest = largest;
-        largest = a[i];
-    } else if (a[i] > secondLargest && a[i] !== largest) {
-        secondLargest = a[i];
-    }
+    sum = sum + a[i];
 }
 
-console.log("Second Largest - ", secondLargest);
+console.log("SUm of the elements - ", sum);
