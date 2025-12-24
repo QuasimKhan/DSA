@@ -105,26 +105,47 @@
 
 // Q - Count frequency of each element in an array
 
-const a = [1, 2, 1, 2, 1, 2, 3, 3, 1, 3, 5];
+// const a = [1, 2, 1, 2, 1, 2, 3, 3, 1, 3, 5];
 
-const freq = {};
+// const freq = {};
+
+// for (let i = 0; i < a.length; i++) {
+//     // if (freq[a[i]]) {
+//     //     freq[a[i]]++;
+//     // } else {
+//     //     freq[a[i]] = 1;
+//     // }
+
+//     // we can also solve by taking a variable to sotre the element, which will look not messy
+
+//     const element = a[i];
+
+//     if (freq[element]) {
+//         freq[element]++;
+//     } else {
+//         freq[element] = 1;
+//     }
+// }
+
+// console.log("Frequncy : ", freq);
+
+// Q - Find the first repeating element
+
+const a = [5, 1, 3, 12, 12];
+
+const frequency = {};
+let firstRepeating = -1;
 
 for (let i = 0; i < a.length; i++) {
-    // if (freq[a[i]]) {
-    //     freq[a[i]]++;
-    // } else {
-    //     freq[a[i]] = 1;
-    // }
-
-    // we can also solve by taking a variable to sotre the element, which will look not messy
-
     const element = a[i];
 
-    if (freq[element]) {
-        freq[element]++;
+    if (frequency[element]) {
+        frequency[element]++;
+        firstRepeating = element;
+        break;
     } else {
-        freq[element] = 1;
+        frequency[element] = 1;
     }
 }
 
-console.log("Frequncy : ", freq);
+console.log("First repeating is - ", firstRepeating);
