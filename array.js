@@ -200,23 +200,33 @@
 
 // console.log(haveSameElements([1, 2, 3, 4, 5], [1, 2, 3, 4, 6]));
 
-// Q - Find all elements that appear more than once
+// // Q - Find all elements that appear more than once
 
-const arr = [1, 1, 2, 3, 4, 5];
+// const arr = [1, 1, 2, 3, 4, 5];
 
-const freq = {};
-const duplicates = [];
+// const freq = {};
+// const duplicates = [];
 
-// Count frequency
-for (let i = 0; i < arr.length; i++) {
-    freq[arr[i]] = (freq[arr[i]] || 0) + 1;
-}
+// // Count frequency
+// for (let i = 0; i < arr.length; i++) {
+//     freq[arr[i]] = (freq[arr[i]] || 0) + 1;
+// }
 
-// Collect elements that appear more than once
-for (let key in freq) {
-    if (freq[key] > 1) {
-        duplicates.push(Number(key));
-    }
-}
+// // Collect elements that appear more than once
+// for (let key in freq) {
+//     if (freq[key] > 1) {
+//         duplicates.push(Number(key));
+//     }
+// }
 
-console.log(duplicates); // [1]
+// console.log(duplicates); // [1]
+
+// Some easy questions
+
+// Q - Insert an element in the end of the array
+
+const arr = [1, 2, 3, 4, 5];
+
+arr.push(2);
+
+console.log(arr);
