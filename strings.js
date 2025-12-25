@@ -62,3 +62,35 @@
 // }
 
 // console.log(isValidPalindrome("agq ga"));
+
+// // Q - revrse a string
+
+// function reverseString(str) {
+//     let reversedString = "";
+
+//     for (let i = str.toLowerCase().length - 1; i >= 0; i--) {
+//         reversedString += str[i];
+//     }
+
+//     return reversedString;
+// }
+
+// console.log(reverseString("quasim"));
+
+// Q - Reverse a array of char using two pointer
+
+function reverseString(s) {
+    let left = 0;
+    let right = s.length - 1;
+
+    while (left < right) {
+        let temp = s[left];
+        s[left] = s[right];
+        s[right] = temp;
+
+        left++;
+        right--;
+    }
+}
+
+console.log(reverseString(["a", "b"]));
