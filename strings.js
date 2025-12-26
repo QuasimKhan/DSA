@@ -77,20 +77,46 @@
 
 // console.log(reverseString("quasim"));
 
-// Q - Reverse a array of char using two pointer
+// // Q - Reverse a array of char using two pointer
 
-function reverseString(s) {
-    let left = 0;
-    let right = s.length - 1;
+// function reverseString(s) {
+//     let left = 0;
+//     let right = s.length - 1;
 
-    while (left < right) {
-        let temp = s[left];
-        s[left] = s[right];
-        s[right] = temp;
+//     while (left < right) {
+//         let temp = s[left];
+//         s[left] = s[right];
+//         s[right] = temp;
 
-        left++;
-        right--;
+//         left++;
+//         right--;
+//     }
+// }
+
+// console.log(reverseString(["a", "b"]));
+
+// Q - First non repeating char in a string
+
+function firstNonRepearing(str) {
+    let freq = {};
+    let firstNonRepeatingChar = "";
+
+    for (let char of str.toLowerCase()) {
+        if (freq[char]) {
+            freq[char]++;
+        } else {
+            freq[char] = 1;
+        }
     }
+
+    for (let char of str.toLowerCase()) {
+        if (freq[char] === 1) {
+            firstNonRepeatingChar = char;
+            break;
+        }
+    }
+
+    return firstNonRepeatingChar;
 }
 
-console.log(reverseString(["a", "b"]));
+console.log(firstNonRepearing("aabbccd"));
