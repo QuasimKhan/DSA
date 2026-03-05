@@ -2,9 +2,9 @@
   "name": "dsa",
   "version": "1.0.0",
   "description": "��#\u0000 \u0000D\u0000S\u0000A\u0000\r\u0000 \u0000",
-  "main": "array.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index"
   },
   "repository": {
     "type": "git",

@@ -1,25 +1,11 @@
-// In this code base we will se the scope of variables in js
+// IN this code base we will se the all things about scope in js
 
-const { log } = require("node:console");
+function first() {
+    var a = 10;
+    function test() {
+        console.log(a);
+        var a = 20;
+    }
 
-// var - Function scoped not block-scoped
-
-// if (true) {
-//     // var x = 10;
-// }
-
-// log(x); //10 because if and loops are block not function
-
-// function test() {
-//     var n = 10;
-// }
-
-// log(n); //ReferenceError that n is not defined because var is not acceable outside the funcition
-
-// Hoisting with var
-
-// what is hoisting ?
-// Hoisitng is something like if the variable is used before the declartion of the varible but instead of showing reference error it show undefined unlike let or const
-
-// log(x); //undefined
-// var x = 10;
+    // test();     //undefined because in js variables are scoped to their function so if any var reintiallezed in the function in will overshadow the global one, in this case, var allows to refere the variable without initilizing the actual varibales, that is why it shows undefined unlike const , let, they will show the reference error instead of undefined
+}

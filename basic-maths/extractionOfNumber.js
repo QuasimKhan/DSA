@@ -18,7 +18,7 @@ function countDigit(n) {
 
 function reverseNumber(n) {
     let sign = n < 0 ? -1 : 1;
-    n = Math.abs(n); //always positve - abs = absolute
+    n = Math.abs(n); //always positve --> abs = absolute
     let reverseNumber = 0;
     while (n > 0) {
         let lastDigit = n % 10;

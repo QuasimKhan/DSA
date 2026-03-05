@@ -1,5 +1,6 @@
 // In this code base we will discuss hash maping in DSA
 
+const { kMaxLength } = require("node:buffer");
 const { log } = require("node:console");
 
 // we use hash maping to find out the frequecy of any elements of array or string
@@ -101,17 +102,41 @@ const { log } = require("node:console");
 
 // Sum of two element must be equal to target , true if eqal else false
 
-function sum(arr, target) {
-    const seen = new Set();
+//Important question for comp.
+
+// function sum(arr, target) {
+//     const seen = new Set();
+
+//     for (const el of arr) {
+//         let need = target - el;
+//         if (seen.has(need)) {
+//             return true;
+//         }
+//         seen.add(el);
+//     }
+//     return false;
+// }
+
+// console.log(sum([1, 2, 3, 5], 8));
+
+// Find how many subararrys whose sum is eual to k
+
+function subarraySum(arr, K) {
+    let sum = 0;
+    let count = 0;
+    const map = new Map();
+
+    map.set(0, 1);
 
     for (const el of arr) {
-        let need = target - el;
-        if (seen.has(need)) {
-            return true;
-        }
-        seen.add(el);
-    }
-    return false;
-}
+        sum += el;
 
-console.log(sum([1, 2, 3, 5], 8));
+        if (map.has(sum - K)) {
+            count += map.get(sum - K);
+        }
+
+        map.set(sum, (map.get(sum) || 0) + 1);
+    }
+
+    return count;
+}
